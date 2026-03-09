@@ -2,12 +2,14 @@
 
 ## 文档内容
 
+```
 ./
 ├── doc                       // 相关论文
 ├── README.md       // README
 ├── models                // 模型权重 
 ├── smolvlm               // 模型加载及推理代码 
 └── docker-image	  // 可直接运行的docker环境
+```
 
 ## 其他数据
 
