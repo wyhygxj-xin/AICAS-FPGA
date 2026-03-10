@@ -1,0 +1,11 @@
+[
+        
+    {
+        "dataset_name": "IIIT5K",
+        "id": 0,
+        "image_path": "IIIT5K/1002_1.png",
+        "question": "what is written in the image?",
+        "answers": "PRIVATE",
+        "type": "Regular Text Recognition"
+    }
+] 
