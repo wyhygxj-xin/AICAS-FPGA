@@ -11,7 +11,7 @@ import os
 model_path = "../models"                # 模型权重地址
 test_data_path = "testone.json"         # 测试数据 JSON 文件路径
 output_log_path = "output/baseline.json"              # 输出日志文件路径
-image_folder_path = "../dataset/OCRBench_v2" # 图片文件夹路径
+image_folder_path = "../data" # 图片文件夹路径
 
 # ---------------------------------------------------------
 # 1. 继承原脚本的精细化计分字典

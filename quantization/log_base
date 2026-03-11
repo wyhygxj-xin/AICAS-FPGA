@@ -1,0 +1,10 @@
+正在加载 SmolVLM2 模型和 Processor...
+The word "Bank" is written in blue letters.
+
+########################### OCRBench FP16 Baseline ##########################
+Text Recognition(Total 1): 1
+------------------Details of Recognition Score-------------------
+Regular Text Recognition(Total 1): 1
+----------------------------------------------------------------
+----------------------Final Score-------------------------------
+Final Score(Total 1): 1 (Accuracy: 100.00%)
