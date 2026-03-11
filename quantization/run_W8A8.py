@@ -10,6 +10,80 @@ from tqdm import tqdm
 # ==========================================
 # 1. 核心量化算子：面向 TMMA 的纯对称 W8A8
 # ==========================================
+# ==========================================
+# 核心量化算子：面向 TMMA 的 SmoothQuant W8A8
+# ==========================================
+class SmoothW8A8Linear(nn.Module):
+    def __init__(self, original_linear, input_channel_max, alpha=0.5):
+        super().__init__()
+        self.in_features = original_linear.in_features
+        self.out_features = original_linear.out_features
+        
+        # 获取原始权重的数据类型 (BFloat16) 和设备 (CUDA)
+        orig_dtype = original_linear.weight.dtype
+        orig_device = original_linear.weight.device
+        
+        # ==========================================
+        # 核心：执行 Smooth 变换 (使用 float32 保证计算精度)
+        # ==========================================
+        weight_data = original_linear.weight.data.float() 
+        weight_col_max = torch.max(torch.abs(weight_data), dim=0)[0]
+        
+        # 确保输入的最大值也在同一个设备上
+        input_channel_max = torch.clamp(input_channel_max.float().to(orig_device), min=1e-5)
+        weight_col_max = torch.clamp(weight_col_max, min=1e-5)
+        
+        # 计算平滑因子 Scales
+        smooth_scales = (input_channel_max.pow(alpha) / weight_col_max.pow(1 - alpha)).clamp(min=1e-5)
+        
+        # 将 Scale 乘入权重
+        smoothed_weight = weight_data * smooth_scales.unsqueeze(0)
+        
+        # ==========================================
+        # 1. 权重 W8 量化
+        # ==========================================
+        w_abs_max = torch.max(torch.abs(smoothed_weight), dim=1, keepdim=True)[0]
+        w_scale = torch.clamp(w_abs_max / 127.0, min=1e-8)
+        
+        w_q = torch.round(smoothed_weight / w_scale)
+        w_q = torch.clamp(w_q, -127, 127)
+        
+        # 生成最终的硬件权重，并强制转回 BFloat16
+        self.weight = nn.Parameter((w_q * w_scale).to(orig_dtype), requires_grad=False)
+        
+        if original_linear.bias is not None:
+            self.bias = nn.Parameter(original_linear.bias.data, requires_grad=False)
+        else:
+            self.register_parameter('bias', None)
+            
+        # ==========================================
+        # 2. 激活值 A8 Scale
+        # ==========================================
+        smoothed_act_max = input_channel_max / smooth_scales
+        act_scale = torch.clamp(torch.max(smoothed_act_max) / 127.0, min=1e-8)
+
+        # 【修复关键 1】：将这两个 Scale 注册为 Buffer，并强制转换为 BFloat16
+        # 这样在模型 .to(device) 或 .half() 时，它们会自动跟进，不会产生类型冲突
+        self.register_buffer('smooth_scales', smooth_scales.to(orig_dtype))
+        self.register_buffer('act_scale', act_scale.to(orig_dtype))
+
+    def forward(self, x):
+        # ==========================================
+        # 模拟 FPGA 的真实数据流
+        # ==========================================
+        x_smoothed = x / self.smooth_scales
+        
+        # A8 量化截断
+        x_q = torch.round(x_smoothed / self.act_scale)
+        x_q = torch.clamp(x_q, -127, 127)
+        x_simulated = x_q * self.act_scale
+        
+        # 【修复关键 2】：强制把激活值转回输入本身的类型 (BFloat16)
+        # 防止计算过程中产生任何 float32 污染
+        x_simulated = x_simulated.to(x.dtype)
+        
+        return nn.functional.linear(x_simulated, self.weight, self.bias)
+'''
 class SymmetricW8A8Linear(nn.Module):
     def __init__(self, original_linear, act_scale):
         super().__init__()
@@ -44,12 +118,29 @@ class SymmetricW8A8Linear(nn.Module):
         
         # 带有真实硬件精度损失的矩阵乘法
         return nn.functional.linear(x_simulated, self.weight, self.bias)
-
+'''
 # ==========================================
 # 2. 校准工具：抓取激活值特征
 # ==========================================
-activation_max_vals = {}
+activation_channel_max_vals = {}
 
+def smoothquant_calibration_hook(module, input, output):
+    # 输入 x 形状通常为 [batch, seq_len, in_features]
+    x = input[0].detach().float()
+    
+    # 将 batch 和 seq_len 维度展平，计算每个 in_features 通道的最大绝对值
+    x_flat = x.view(-1, x.shape[-1])
+    current_channel_max = torch.max(torch.abs(x_flat), dim=0)[0] # 形状: [in_features]
+    
+    layer_name = module.layer_name 
+    if layer_name not in activation_channel_max_vals:
+        activation_channel_max_vals[layer_name] = current_channel_max
+    else:
+        # 取历史最大值
+        activation_channel_max_vals[layer_name] = torch.max(
+            activation_channel_max_vals[layer_name], current_channel_max
+        )
+'''
 def calibration_hook(module, input, output):
     x = input[0].detach().float()
     current_max = torch.max(torch.abs(x)).item()
@@ -59,8 +150,18 @@ def calibration_hook(module, input, output):
         activation_max_vals[layer_name] = current_max
     else:
         activation_max_vals[layer_name] = max(activation_max_vals[layer_name], current_max)
-    
-        
+'''    
+
+def register_smoothquant_hooks(model):
+    hooks = []
+    for name, module in model.named_modules():
+        # 依然使用黑名单机制：保护视觉模块，只拦截大语言模型部分的线性层
+        if isinstance(module, nn.Linear) and "vision" not in name.lower():
+            module.layer_name = name 
+            # 注意看这里：我们把新的 smoothquant_calibration_hook 挂载上去！
+            hooks.append(module.register_forward_hook(smoothquant_calibration_hook))
+    return hooks
+'''  
 def register_calibration_hooks(model):
     hooks = []
     for name, module in model.named_modules():
@@ -69,12 +170,13 @@ def register_calibration_hooks(model):
             hooks.append(module.register_forward_hook(calibration_hook))
             # print(f"已挂载探针: {name}") # 可以取消注释看看挂载了哪些
         # 严格限制：只量化语言模型，保护视觉 Token 的高精度特征
-        '''
+        
         if isinstance(module, nn.Linear) and "text_model" in name:
             module.layer_name = name 
             hooks.append(module.register_forward_hook(calibration_hook))
-        '''
+        
     return hooks
+'''
 
 # ==========================================
 # 3. 主流程：加载 -> 校准 -> 替换 -> 推理
@@ -143,7 +245,15 @@ def main():
     # 5. 执行校准
     # ---------------------------------------------------------
     print("\n🔍 开始校准：提取激活值分布...")
-    hooks = register_calibration_hooks(model)
+    hooks = register_smoothquant_hooks(model)
+    # hooks = []
+    for name, module in model.named_modules():
+        # 依然使用黑名单机制：保护视觉模块，只拦截大语言模型部分的线性层
+        if isinstance(module, nn.Linear) and "vision" not in name.lower():
+            module.layer_name = name 
+            # 注意看这里：我们把新的 smoothquant_calibration_hook 挂载上去！
+            hooks.append(module.register_forward_hook(smoothquant_calibration_hook))
+    # return hooks(model)
     for i in tqdm(range(len(jiaozhun_data)), desc="Calibrating with Jiaozhun Data"):
         jiaozhun_img_path = os.path.join(image_folder_path, jiaozhun_data[i]["image_path"])
         qs = jiaozhun_data[i]["question"]
@@ -164,7 +274,7 @@ def main():
     
     for h in hooks:
         h.remove()
-    print(f"✅ 校准完成，共获取 {len(activation_max_vals)} 个线性层的 Scale。")
+    print(f"✅ 校准完成，共获取 {len(activation_channel_max_vals)} 个线性层的 Scale。")
 
 
     # ---------------------------------------------------------
@@ -177,6 +287,17 @@ def main():
             for child_name, child_module in module.named_children():
                 if isinstance(child_module, nn.Linear):
                     full_name = f"{name}.{child_name}" if name else child_name
+                    if full_name in activation_channel_max_vals:
+                        # 提取按通道的最大值向量
+                        channel_max = activation_channel_max_vals[full_name]
+                        # 使用 SmoothQuant 算子，alpha 默认设为 0.5 是最经典的甜点
+                        quantized_layer = SmoothW8A8Linear(child_module, channel_max, alpha=0.5)
+    
+                        # 放到对应设备上，保持数据类型一致（bfloat16）
+                        quantized_layer.to(device)
+                        setattr(module, child_name, quantized_layer)
+                        replaced_count += 1
+                    '''
                     if full_name in activation_max_vals:
                         # 计算静态 Act Scale
                         act_scale = max(activation_max_vals[full_name] / 127.0, 1e-8)
@@ -184,6 +305,7 @@ def main():
                         quantized_layer = SymmetricW8A8Linear(child_module, act_scale)
                         setattr(module, child_name, quantized_layer)
                         replaced_count += 1
+                    '''
                         
     print(f"✅ 成功替换 {replaced_count} 个算子，模型已处于 W8A8 状态！")
 

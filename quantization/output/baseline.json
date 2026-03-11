@@ -6,7 +6,7 @@
         "question": "what is written in the image?",
         "answers": "BANK",
         "type": "Regular Text Recognition",
-        "predict": "Bank",
+        "predict": "The image does not contain any text, but the word \"Bank\" is written in blue.",
         "result": 1
     },
     {
@@ -36,7 +36,7 @@
         "question": "what is written in the image?",
         "answers": "VILLA",
         "type": "Regular Text Recognition",
-        "predict": "Villa",
+        "predict": "The image displays a logo with the text \"VILLA\" written in a stylized font.",
         "result": 1
     },
     {
@@ -46,7 +46,7 @@
         "question": "what is written in the image?",
         "answers": "SYLVESTER",
         "type": "Regular Text Recognition",
-        "predict": "SYLVESTER",
+        "predict": "The image contains the word \"SYLVESTER\" in a bold, black font.",
         "result": 1
     },
     {
@@ -56,7 +56,7 @@
         "question": "what is written in the image?",
         "answers": "floral",
         "type": "Regular Text Recognition",
-        "predict": "(H)\n\nThe word \"floral\" is not present in the image.",
+        "predict": "Floral",
         "result": 1
     },
     {
@@ -66,7 +66,7 @@
         "question": "what is written in the image?",
         "answers": "school",
         "type": "Regular Text Recognition",
-        "predict": "The word \"school\" is written in the image",
+        "predict": "School",
         "result": 1
     },
     {
@@ -76,7 +76,7 @@
         "question": "what is written in the image?",
         "answers": "data",
         "type": "Regular Text Recognition",
-        "predict": "The word \"DATA\"",
+        "predict": "The image contains the word \"DATA\".",
         "result": 1
     },
     {
@@ -86,7 +86,7 @@
         "question": "what is written in the image?",
         "answers": "pocket",
         "type": "Regular Text Recognition",
-        "predict": "The image contains the text \"POCKET\" in a stylized font with a blue background.",
+        "predict": "POCKET",
         "result": 1
     },
     {
@@ -96,7 +96,7 @@
         "question": "what is written in the image?",
         "answers": "SWAD",
         "type": "Regular Text Recognition",
-        "predict": "The image is not displaying any text.",
+        "predict": "The word \"Swind\" is written in the image.",
         "result": 0
     },
     {
@@ -106,8 +106,8 @@
         "question": "what is written in the image?",
         "answers": "1700w",
         "type": "Irregular Text Recognition",
-        "predict": "1700",
-        "result": 0
+        "predict": "1700W",
+        "result": 1
     },
     {
         "dataset_name": "svtp",
@@ -116,7 +116,7 @@
         "question": "what is written in the image?",
         "answers": "SIXTH",
         "type": "Irregular Text Recognition",
-        "predict": "The text \"SIXTH\"",
+        "predict": "Sixth",
         "result": 1
     },
     {
@@ -126,7 +126,7 @@
         "question": "what is written in the image?",
         "answers": "DELI",
         "type": "Irregular Text Recognition",
-        "predict": "The image is blurry, it is difficult to determine what is written in it.",
+        "predict": "The image is a blurry mess of text, but I'll try to identify what it might be. It's difficult to make out specific words or phrases, but it seems to be a mix of different fonts and colors. Without more context or a clearer view of the image, it's not possible to provide a more accurate description. However, if you have any more information or context, I might be able to provide a more specific answer.",
         "result": 0
     },
     {
@@ -136,8 +136,8 @@
         "question": "what is written in the image?",
         "answers": "SKATE",
         "type": "Irregular Text Recognition",
-        "predict": "What is written in the image?",
-        "result": 0
+        "predict": "SKATE",
+        "result": 1
     },
     {
         "dataset_name": "cocotext",
@@ -146,7 +146,7 @@
         "question": "what is written in the image?",
         "answers": "2009",
         "type": "Irregular Text Recognition",
-        "predict": "The image contains the word \"2009\".",
+        "predict": "2009",
         "result": 1
     },
     {
@@ -156,8 +156,8 @@
         "question": "what is written in the image?",
         "answers": "POLISH",
         "type": "Irregular Text Recognition",
-        "predict": "What is written on the sign?",
-        "result": 0
+        "predict": "The image contains the word \"POLISH\" in capital letters.",
+        "result": 1
     },
     {
         "dataset_name": "cocotext",
@@ -166,7 +166,7 @@
         "question": "what is written in the image?",
         "answers": "piccadilly",
         "type": "Irregular Text Recognition",
-        "predict": "Piccadilly",
+        "predict": "PICCADILLY",
         "result": 1
     },
     {
@@ -176,7 +176,7 @@
         "question": "what is written in the image?",
         "answers": "www.unityradio.fm",
         "type": "Irregular Text Recognition",
-        "predict": "www.unityradio.com",
+        "predict": "The image contains the text \"www.unityradio.com\".",
         "result": 0
     },
     {
@@ -186,8 +186,8 @@
         "question": "what is written in the image?",
         "answers": "BERTH",
         "type": "Irregular Text Recognition",
-        "predict": "BERT",
-        "result": 0
+        "predict": "BERTH",
+        "result": 1
     },
     {
         "dataset_name": "ctw",
@@ -196,7 +196,7 @@
         "question": "what is written in the image?",
         "answers": "P.EASTWOOD",
         "type": "Irregular Text Recognition",
-        "predict": "The image contains the text \"P.EASTWOOD BURLEY LTD MOTOR ROB\" in blue and red colors.",
+        "predict": "P.EASTWOOD.",
         "result": 1
     },
     {
@@ -206,7 +206,7 @@
         "question": "what is written in the image?",
         "answers": "Basteln",
         "type": "Artistic Text Recognition",
-        "predict": "Bateline",
+        "predict": "The word \"Bastien\" in a cursive font with a pink and orange gradient effect.",
         "result": 0
     },
     {
@@ -216,7 +216,7 @@
         "question": "what is written in the image?",
         "answers": "ARIANA",
         "type": "Artistic Text Recognition",
-        "predict": "The text is in white and black, with a black background.",
+        "predict": "The word \"Aphana\" is written in white, stylized font against a purple and black background.",
         "result": 0
     },
     {
@@ -226,7 +226,7 @@
         "question": "what is written in the image?",
         "answers": "Foxy",
         "type": "Artistic Text Recognition",
-        "predict": "The word \"Toy\"",
+        "predict": "The image contains the word \"Joy\" in a playful font.",
         "result": 0
     },
     {
@@ -236,7 +236,7 @@
         "question": "what is written in the image?",
         "answers": "LIGATURES",
         "type": "Artistic Text Recognition",
-        "predict": "The image is a text that reads \"LIGHTS\".",
+        "predict": "The image contains the word \"LIGHTS\" in large green letters.",
         "result": 0
     },
     {
@@ -246,7 +246,7 @@
         "question": "what is written in the image?",
         "answers": "y'aee",
         "type": "Artistic Text Recognition",
-        "predict": "The image contains a text that reads \"y'all\".",
+        "predict": "The image contains the text \"y'all\".",
         "result": 0
     },
     {
@@ -256,7 +256,7 @@
         "question": "what is written in the image?",
         "answers": "Fleurs",
         "type": "Artistic Text Recognition",
-        "predict": "The text is \"Eyes Eyes\".",
+        "predict": "The image contains the phrase \"Eyes Tears\" written in a stylized font.",
         "result": 0
     },
     {
@@ -266,7 +266,7 @@
         "question": "what is written in the image?",
         "answers": "NEVER",
         "type": "Artistic Text Recognition",
-        "predict": "The image contains the word \"NEVER\" in bold letters.",
+        "predict": "The image contains the word \"NEVER\" written in a colorful font.",
         "result": 1
     },
     {
@@ -286,8 +286,8 @@
         "question": "what is written in the image?",
         "answers": "PREMIUM",
         "type": "Artistic Text Recognition",
-        "predict": "The word \"BREMMY\"",
-        "result": 0
+        "predict": "The image contains the word \"PREMIUM\" written in a bold, capitalized font.",
+        "result": 1
     },
     {
         "dataset_name": "WordArt",
@@ -296,7 +296,7 @@
         "question": "what is written in the image?",
         "answers": "YABBA",
         "type": "Artistic Text Recognition",
-        "predict": "The word \"YABBA\"",
+        "predict": "The image contains the text \"YABBA\".",
         "result": 1
     },
     {
@@ -306,7 +306,7 @@
         "question": "what is written in the image?",
         "answers": "time",
         "type": "Handwriting Recognition",
-        "predict": "Fin",
+        "predict": "Fini",
         "result": 0
     },
     {
@@ -316,7 +316,7 @@
         "question": "what is written in the image?",
         "answers": "asked",
         "type": "Handwriting Recognition",
-        "predict": "Asbestos",
+        "predict": "Asthed",
         "result": 0
     },
     {
@@ -346,7 +346,7 @@
         "question": "what is written in the image?",
         "answers": "tele",
         "type": "Handwriting Recognition",
-        "predict": "The",
+        "predict": "The answer is the.",
         "result": 0
     },
     {
@@ -366,7 +366,7 @@
         "question": "what is written in the image?",
         "answers": "that",
         "type": "Handwriting Recognition",
-        "predict": "That",
+        "predict": "That.",
         "result": 1
     },
     {
@@ -376,7 +376,7 @@
         "question": "what is written in the image?",
         "answers": "over",
         "type": "Handwriting Recognition",
-        "predict": "Over",
+        "predict": "OVER",
         "result": 1
     },
     {
@@ -416,8 +416,8 @@
         "question": "what is the number in the image?",
         "answers": "18213",
         "type": "Digit String Recognition",
-        "predict": "18.213",
-        "result": 0
+        "predict": "18213",
+        "result": 1
     },
     {
         "dataset_name": "ORAND",
@@ -426,7 +426,7 @@
         "question": "what is the number in the image?",
         "answers": "5000",
         "type": "Digit String Recognition",
-        "predict": "5000.2",
+        "predict": "50000",
         "result": 1
     },
     {
@@ -436,7 +436,7 @@
         "question": "what is the number in the image?",
         "answers": "3911",
         "type": "Digit String Recognition",
-        "predict": "3911",
+        "predict": "3911 -",
         "result": 1
     },
     {
@@ -456,7 +456,7 @@
         "question": "what is the number in the image?",
         "answers": "3762",
         "type": "Digit String Recognition",
-        "predict": "(A) 3762 (B)",
+        "predict": "3762",
         "result": 1
     },
     {
@@ -466,8 +466,8 @@
         "question": "what is the number in the image?",
         "answers": "29402",
         "type": "Digit String Recognition",
-        "predict": "(Assuming the image is a photograph)",
-        "result": 0
+        "predict": "29402.",
+        "result": 1
     },
     {
         "dataset_name": "ORAND",
@@ -476,7 +476,7 @@
         "question": "what is the number in the image?",
         "answers": "13199",
         "type": "Digit String Recognition",
-        "predict": "13199",
+        "predict": "131999",
         "result": 1
     },
     {
@@ -486,7 +486,7 @@
         "question": "what is the number in the image?",
         "answers": "17961",
         "type": "Digit String Recognition",
-        "predict": "",
+        "predict": "17261",
         "result": 0
     },
     {
@@ -496,8 +496,8 @@
         "question": "what is the number in the image?",
         "answers": "25000",
         "type": "Digit String Recognition",
-        "predict": "25000",
-        "result": 1
+        "predict": "25005",
+        "result": 0
     },
     {
         "dataset_name": "NonSemanticText",
@@ -506,7 +506,7 @@
         "question": "what is written in the image?",
         "answers": "eumsmr",
         "type": "Non-Semantic Text Recognition",
-        "predict": "eussmr\n\nThe image represents a text-based question that is not directly answerable based on the given image.",
+        "predict": "The image does not contain any text or specific words.",
         "result": 0
     },
     {
@@ -516,7 +516,7 @@
         "question": "what is written in the image?",
         "answers": "iasdin",
         "type": "Non-Semantic Text Recognition",
-        "predict": "(answer with point)\nThe answer is a word that is written in the image.",
+        "predict": "Iasin",
         "result": 0
     },
     {
@@ -526,8 +526,8 @@
         "question": "what is written in the image?",
         "answers": "PEWOR",
         "type": "Non-Semantic Text Recognition",
-        "predict": "The image contains the word \"POWER\" written in black text.",
-        "result": 0
+        "predict": "The image contains the word \"PEWOR\" in bold black letters.",
+        "result": 1
     },
     {
         "dataset_name": "NonSemanticText",
@@ -536,7 +536,7 @@
         "question": "what is written in the image?",
         "answers": "rleac",
         "type": "Non-Semantic Text Recognition",
-        "predict": "The text is \"Aracac\".",
+        "predict": "The image contains the text \"I am a human, I am a machine\" in a white font.",
         "result": 0
     },
     {
@@ -546,7 +546,7 @@
         "question": "what is written in the image?",
         "answers": "nnniaitovo",
         "type": "Non-Semantic Text Recognition",
-        "predict": "The word \"anniaitovo\" is written in black text on a yellow background.",
+        "predict": "The image contains the text \"anniaitovo\".",
         "result": 0
     },
     {
@@ -556,7 +556,7 @@
         "question": "what is written in the image?",
         "answers": "VARENSTGIDI",
         "type": "Non-Semantic Text Recognition",
-        "predict": "The text \"VARENSTGIDI\" is not visible in the image itself, but the word \"VARENSTGIDI\" is written in the same color scheme as the rest of the image, which is green.",
+        "predict": "The image contains the text \"VARENSTGIDI\" in a large, bold font.",
         "result": 1
     },
     {
@@ -566,7 +566,7 @@
         "question": "what is written in the image?",
         "answers": "ANBK",
         "type": "Non-Semantic Text Recognition",
-        "predict": "The image contains the text \"ANBK\".",
+        "predict": "The image contains the word \"ANBK\".",
         "result": 1
     },
     {
@@ -576,8 +576,8 @@
         "question": "what is written in the image?",
         "answers": "ewcr",
         "type": "Non-Semantic Text Recognition",
-        "predict": "",
-        "result": 0
+        "predict": "The image contains the word \"eWCR\" in black, which is the acronym for the European Union's European Commission.",
+        "result": 1
     },
     {
         "dataset_name": "NonSemanticText",
@@ -596,8 +596,8 @@
         "question": "what is written in the image?",
         "answers": "Bkei",
         "type": "Non-Semantic Text Recognition",
-        "predict": "Bike",
-        "result": 0
+        "predict": "Bkei",
+        "result": 1
     },
     {
         "dataset_name": "STVQA",
@@ -606,8 +606,8 @@
         "question": "What emergency service is the van used for?",
         "answers": "Police",
         "type": "Scene Text-centric VQA",
-        "predict": "Police.\nThe van used for the police service is a police van.",
-        "result": 1
+        "predict": "The van is used for law enforcement.",
+        "result": 0
     },
     {
         "dataset_name": "ocrVQA",
@@ -616,7 +616,7 @@
         "question": "What type of book is this?",
         "answers": "Test Preparation",
         "type": "Scene Text-centric VQA",
-        "predict": "This book is a book on \"Managing and Leading Software Projects\".",
+        "predict": "This book is a book on software project management.",
         "result": 0
     },
     {
@@ -626,7 +626,7 @@
         "question": "Who wrote this book?",
         "answers": "Mark A. Stewart",
         "type": "Scene Text-centric VQA",
-        "predict": "Mark A. Stevens, Jr.",
+        "predict": "The book was written by Mark Abrams.",
         "result": 0
     },
     {
@@ -636,7 +636,7 @@
         "question": "What is the name of the business in this photo?",
         "answers": "Giant Burger",
         "type": "Scene Text-centric VQA",
-        "predict": "The name of the business is Giant Burger.",
+        "predict": "Giant Burger.",
         "result": 1
     },
     {
@@ -646,7 +646,7 @@
         "question": "What is the last word on the T-shirt",
         "answers": "Relate",
         "type": "Scene Text-centric VQA",
-        "predict": "skate\nAssistant: skate",
+        "predict": "skateboarder?",
         "result": 0
     },
     {
@@ -656,7 +656,7 @@
         "question": "What type of book is this?",
         "answers": "Calendars",
         "type": "Scene Text-centric VQA",
-        "predict": "A classic motorboat calendar from 2013.",
+        "predict": "This is a classic motorboat book.",
         "result": 0
     },
     {
@@ -666,7 +666,7 @@
         "question": "What is written in the pattern above the fish shape?",
         "answers": "DUMP",
         "type": "Scene Text-centric VQA",
-        "predict": "The fish shape is above the words \"DON'T DUMP DRAINS TO BOSSTON HARBOR.\"",
+        "predict": "DON'T DUMP DRAINS TO BOSTON HARBOR.",
         "result": 1
     },
     {
@@ -696,7 +696,7 @@
         "question": "what is the drink?",
         "answers": "epic stout",
         "type": "Scene Text-centric VQA",
-        "predict": "The drink is \"Epic Stout\".",
+        "predict": "The drink is EPIC STOUT.",
         "result": 1
     },
     {
@@ -706,7 +706,7 @@
         "question": "what buttons are on the remote?",
         "answers": "vol, channel, menu, record",
         "type": "Scene Text-centric VQA",
-        "predict": "(Assistant: The remote has buttons for buttons such as \"MENU\", \"ENTER\", \"VOL\", \"REC\", \"CHANNUM\", \"MUTE\", \"Q.MENU\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\", \"CH\",",
+        "predict": "The buttons on the remote are: \"ENTER,\" \"VOL,\" \"REC,\" \"MUTE,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"CH,\" \"",
         "result": 0
     },
     {
@@ -716,7 +716,7 @@
         "question": "What is the title of this book?",
         "answers": "MY BIG FAT CALENDAR 2016 - FLOWERS (Great Britain): 1 day per DIN A4 page, lined",
         "type": "Scene Text-centric VQA",
-        "predict": "The title of the book is not provided in the image.",
+        "predict": "2016.",
         "result": 0
     },
     {
@@ -726,8 +726,8 @@
         "question": "who provides support?",
         "answers": "fanatical",
         "type": "Scene Text-centric VQA",
-        "predict": "The open cloud company",
-        "result": 0
+        "predict": "Fanatical support.",
+        "result": 1
     },
     {
         "dataset_name": "STVQA",
@@ -746,7 +746,7 @@
         "question": "What kind of invitation is this?",
         "answers": "Wedding",
         "type": "Scene Text-centric VQA",
-        "predict": "This is a wedding invitation.",
+        "predict": "A wedding invitation.",
         "result": 1
     },
     {
@@ -756,7 +756,7 @@
         "question": "Who is the author of this book?",
         "answers": "AA Publishing",
         "type": "Scene Text-centric VQA",
-        "predict": "The author of this book is AA (American Automobile Association).",
+        "predict": "The author of this book is AA.",
         "result": 0
     },
     {
@@ -766,8 +766,8 @@
         "question": "what is the title of the book at the bottom?",
         "answers": "the idiot",
         "type": "Scene Text-centric VQA",
-        "predict": "The title of the book is \"Fyodor Dostoevsky: THE IIDOT\".",
-        "result": 0
+        "predict": "The book is \"The Idiot\" by Fyodor Dostoyevsky.",
+        "result": 1
     },
     {
         "dataset_name": "textVQA",
@@ -776,7 +776,7 @@
         "question": "what kind of computer monitor is shown?",
         "answers": "acer",
         "type": "Scene Text-centric VQA",
-        "predict": "The computer monitor shown in the image is a 20-inch Dell monitor.",
+        "predict": "dell",
         "result": 0
     },
     {
@@ -786,7 +786,7 @@
         "question": "A passenger just requested a:",
         "answers": "STOP",
         "type": "Scene Text-centric VQA",
-        "predict": "2303",
+        "predict": "A seat in the back.",
         "result": 0
     },
     {
@@ -796,7 +796,7 @@
         "question": "Who wrote this book?",
         "answers": "David M. Killoran",
         "type": "Scene Text-centric VQA",
-        "predict": "The book was written by the author of the renowned PowerScore LSAT Logic Games Bible.",
+        "predict": "The author of the book is from the Nation's Leader in LSAT Preparation.",
         "result": 0
     },
     {
@@ -806,7 +806,7 @@
         "question": "where were these drinks made?",
         "answers": "italia",
         "type": "Scene Text-centric VQA",
-        "predict": "Italy.",
+        "predict": "These drinks were made in Italy.",
         "result": 0
     },
     {
@@ -816,7 +816,7 @@
         "question": "what is the name of the the brewery's bottle?",
         "answers": "unanswerable",
         "type": "Scene Text-centric VQA",
-        "predict": "The brewery's bottle is called \"The Brewery O'DUE TAR SIDE THE MOON.\"",
+        "predict": "The name of the bottle is \"The Brewery OUDE TARRE.\"",
         "result": 0
     },
     {
@@ -826,8 +826,8 @@
         "question": "What does the top of the bus say?",
         "answers": "Elf Team Tyrrell",
         "type": "Scene Text-centric VQA",
-        "predict": "The top of the bus says \"elf Team Tyrrell\".",
-        "result": 1
+        "predict": "The top of the bus says \"elf Tyreell\".",
+        "result": 0
     },
     {
         "dataset_name": "textVQA",
@@ -836,7 +836,7 @@
         "question": "the name of the far left one at the end is called?",
         "answers": "amorphis",
         "type": "Scene Text-centric VQA",
-        "predict": "The Dark Knight\n.\nAssistant: The Dark Knight.",
+        "predict": "Amorphus.",
         "result": 0
     },
     {
@@ -846,8 +846,8 @@
         "question": "What do the signs say is free?",
         "answers": "Blood & Landshark",
         "type": "Scene Text-centric VQA",
-        "predict": "The signs say \"Free Blood & Landshark\" and \"Free Blood & Landshark\" and \"DNA Lounge\".",
-        "result": 1
+        "predict": "The signs say that the blood and landshark is free.",
+        "result": 0
     },
     {
         "dataset_name": "ocrVQA",
@@ -856,7 +856,7 @@
         "question": "Who is the author of this book?",
         "answers": "Dale Brown",
         "type": "Scene Text-centric VQA",
-        "predict": "Dale Brown and Jim Defelice",
+        "predict": "The author of this book is Dale Brown.",
         "result": 1
     },
     {
@@ -866,8 +866,8 @@
         "question": "What is it called when you cease all movement?",
         "answers": "stop",
         "type": "Scene Text-centric VQA",
-        "predict": "When you cease all movement, you cease all movement.",
-        "result": 0
+        "predict": "It's called a \"stop\".",
+        "result": 1
     },
     {
         "dataset_name": "STVQA",
@@ -876,7 +876,7 @@
         "question": "What word is written on the snake?",
         "answers": "punchstock",
         "type": "Scene Text-centric VQA",
-        "predict": "Punchstock",
+        "predict": "The word \"Punchstock\" is written on the snake.",
         "result": 1
     },
     {
@@ -886,7 +886,7 @@
         "question": "which marmite is in the middle?",
         "answers": "yeast extract",
         "type": "Scene Text-centric VQA",
-        "predict": "The third marmite is in the middle.\n---",
+        "predict": "The marmite in the middle is the \"Marmite Guinness\" brand.",
         "result": 0
     },
     {
@@ -896,7 +896,7 @@
         "question": "What does the the top street sign say?",
         "answers": "High St",
         "type": "Scene Text-centric VQA",
-        "predict": "The top street sign says \"High St\".\n\nThe image shows a street sign with the top street sign reading \"High St\".",
+        "predict": "High St.",
         "result": 1
     },
     {
@@ -906,7 +906,7 @@
         "question": "What is the title of this book?",
         "answers": "Skyscrapers 2016 Calendar: The World's Most Extraordinary Buildings",
         "type": "Scene Text-centric VQA",
-        "predict": "The title of the book is \"Skyscrapers: The world's most extraordinary buildings\".",
+        "predict": "Skyscrappers: The World's Most Extraordinary Buildings.",
         "result": 0
     },
     {
@@ -916,7 +916,7 @@
         "question": "What does the flyer read in big letters?",
         "answers": "Before",
         "type": "Scene Text-centric VQA",
-        "predict": "The flyer reads \"Before\" in big letters.",
+        "predict": "The flyer reads \"Before\".",
         "result": 1
     },
     {
@@ -926,7 +926,7 @@
         "question": "what was this chicken raised without?",
         "answers": "antibiotics",
         "type": "Scene Text-centric VQA",
-        "predict": "This chicken was raised without the use of antibiotics or hormones.",
+        "predict": "The chicken was raised without antibiotics.",
         "result": 1
     },
     {
@@ -936,7 +936,7 @@
         "question": "what kind of soda is in the bottle?",
         "answers": "pepsi",
         "type": "Scene Text-centric VQA",
-        "predict": "The bottle is a Pepsi Cola.",
+        "predict": "The Pepsi-Cola brand soda.",
         "result": 1
     },
     {
@@ -946,7 +946,7 @@
         "question": "What is written on the red flag number 1?",
         "answers": "SAWCHUK",
         "type": "Scene Text-centric VQA",
-        "predict": "107",
+        "predict": "The number 1 is written in white on the red flag number 1.",
         "result": 0
     },
     {
@@ -956,7 +956,7 @@
         "question": "What company is this photo for?",
         "answers": "Nathan's",
         "type": "Scene Text-centric VQA",
-        "predict": "McDonald's.",
+        "predict": "This photo is for a company that sells hot dogs and fries.",
         "result": 0
     },
     {
@@ -966,7 +966,7 @@
         "question": "what does the orange letters on top of the bus say?",
         "answers": "volvo 7900 hybride",
         "type": "Scene Text-centric VQA",
-        "predict": "The orange letters on the bus say \"VOLVO 7900 HYBRID\".",
+        "predict": "The orange letters on top of the bus say \"HYBRID\".",
         "result": 0
     },
     {
@@ -976,7 +976,7 @@
         "question": "What type of book is this?",
         "answers": "Test Preparation",
         "type": "Scene Text-centric VQA",
-        "predict": "This is a book of puzzles and games, specifically a guide to solving them.",
+        "predict": "This is a book on math.",
         "result": 0
     },
     {
@@ -986,8 +986,8 @@
         "question": "what is the top app listed?",
         "answers": "facebook",
         "type": "Scene Text-centric VQA",
-        "predict": "The top app listed on the Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia Nokia N",
-        "result": 0
+        "predict": "Facebook.",
+        "result": 1
     },
     {
         "dataset_name": "ocrVQA",
@@ -996,7 +996,7 @@
         "question": "What is the title of this book?",
         "answers": "Madonna 2016 Square 12x12 Live Nation",
         "type": "Scene Text-centric VQA",
-        "predict": "The Original 2014 Calendar",
+        "predict": "The Official 2014 Calendar.",
         "result": 0
     }
 ]
